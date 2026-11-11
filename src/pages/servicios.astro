@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Ansiedad y estrés',
+    description: 'La ansiedad puede manifestarse como preocupación constante, tensión física, dificultad para dormir o ataques de panic. Te ayudo a entender qué la genera y a desarrollar estrategias para gestionarla.',
+    details: ['Ansiedad generalizada', 'Ansiedad social', 'Ataques de pánico', 'Estrés crónico', 'Fobias'],
+  },
+  {
+    title: 'Autoestima',
+    description: 'Una baja autoestima afecta cómo te ves, cómo te relacionas y cómo tomas decisiones. Trabajamos juntos para que te conozcas mejor, te aceptes y construyas una imagen más realista y positiva de ti mismo/a.',
+    details: ['Autocrítica excesiva', 'Comparación constante', 'Dificultad para decir no', 'Perfeccionismo', 'Inseguridad'],
+  },
+  {
+    title: 'Dificultades emocionales',
+    description: 'A veces las emociones se sienten abrumadoras o confusas. Te ayudo a identificar lo que sientes, a entender por qué y a encontrar formas más sanas de expresar y regular tus emociones.',
+    details: ['Ira o frustración', 'Tristeza persistente', 'Dificultad para relacionarse', 'Cambios de humor', 'Sensación de vacío'],
+  },
+  {
+    title: 'Problemas de conducta en niños',
+    description: 'Los niños no siempre pueden expresar con palabras lo que les pasa. Los problemas de conducta suelen ser una señal de algo más profundo. Trabajo con el niño y la familia para entender y mejorar la situación.',
+    details: ['Berrinches frecuentes', 'Dificultad en el colegio', 'Aislamiento social', 'Problemas de sueño', 'Enuresis'],
+  },
+  {
+    title: 'Adolescencia',
+    description: 'La adolescencia es una etapa de cambios intensos. La presión del grupo, la identidad, las redes sociales y las expectativas pueden generar mucho malestar. Ofrezco un espacio seguro para explorar y crecer.',
+    details: ['Identidad personal', 'Presión social', 'Problemas escolares', 'Relación con la familia', 'Uso de tecnología'],
+  },
+  {
+    title: 'Duelo y pérdidas',
+    description: 'Perder a alguien importante o atravesar una pérdida significativa es uno de los experiencia más dolorosas. No hay que pasar por ello solo/a. Te acompaño en el proceso de duelo con paciencia y respeto.',
+    details: ['Duelo por fallecimiento', 'Separación o divorcio', 'Pérdida de empleo', 'Otras pérdidas significativas'],
+  },
+];
+---
+
+<Layout title="Servicios">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-50 via-white to-sage-50 py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-ink mb-6">
+        Servicios
+      </h1>
+      <p class="text-lg lg:text-xl text-ink-light max-w-2xl mx-auto">
+        Cada persona es única. Por eso, el tratamiento se adapta a tus necesidades, a tu ritmo y a tus objetivos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+      {services.map((service, index) => (
+        <div class:list={[
+          'grid lg:grid-cols-2 gap-8 lg:gap-16 items-start',
+          index % 2 === 1 && 'lg:grid-flow-dense',
+        ]}>
+          <div class:list={[index % 2 === 1 && 'lg:col-start-2']}>
+            <div class="space-y-4">
+              <h2 class="text-2xl lg:text-3xl font-bold text-ink">{service.title}</h2>
+              <p class="text-ink-light leading-relaxed">{service.description}</p>
+              <ul class="flex flex-wrap gap-2 pt-2">
+                {service.details.map((detail) => (
+                  <li class="text-sm bg-primary-50 text-primary-700 px-3 py-1.5 rounded-full">
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class:list={[index % 2 === 1 && 'lg:col-start-1']}>
+            <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary-50 to-sage-50 flex items-center justify-center">
+              <div class="text-center space-y-2 p-6">
+                <div class="w-16 h-16 mx-auto rounded-full bg-primary-100 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                  </svg>
+                </div>
+                <p class="text-xs text-primary-400">Ilustración</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-600 to-primary-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        ¿Te identificas con alguno de estos problemas?
+      </h2>
+      <p class="text-lg text-primary-100 mb-8 max-w-xl mx-auto">
+        No tienes que seguir solo/a. Escríbeme y-book en la primera consulta lo que te preocupa.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center gap-2 bg-white text-primary-700 px-8 py-4 rounded-[var(--radius-button)] text-base font-semibold hover:bg-primary-50 transition-colors shadow-sm"
+      >
+        Solicitar primera consulta
+      </a>
+    </div>
+  </section>
+</Layout>

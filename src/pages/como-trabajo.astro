@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Primera sesión',
+    description: 'Nos conocemos. Me cuentas qué te preocupa, qué te ha traído aquí y qué esperas de la terapia. No necesitas tener tudo claro: muchas personas llegan sin saber exactamente qué les pasa, y eso está bien.',
+    icon: 'chat',
+  },
+  {
+    number: '02',
+    title: 'Evaluación',
+    description: 'En las primeras sesiones vamos a entender mejor qué está ocurriendo. Identificamos patrones, pensamientos, emociones y conductas que están contribuyendo al problema. Es como hacer un mapa de tu situación.',
+    icon: 'search',
+  },
+  {
+    number: '03',
+    title: 'Intervención',
+    description: 'Aquí es donde trabajamos de verdad. Con herramientas concretas, ejercicios y estrategias adaptadas a ti, empezamos a hacer cambios reales. Tú pones las ganas, yo pongo la guía.',
+    icon: 'tools',
+  },
+  {
+    number: '04',
+    title: 'Seguimiento',
+    description: 'Vamos revisando cómo evolucionas, qué está funcionando y qué necesita ajustes. La terapia no es un camino lineal, y está bien que haya altibajos. Lo importante es que avances.',
+    icon: 'chart',
+  },
+];
+---
+
+<Layout title="Cómo trabajo">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-50 via-white to-sage-50 py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-ink mb-6">
+        Cómo trabajo
+      </h1>
+      <p class="text-lg lg:text-xl text-ink-light max-w-2xl mx-auto">
+        La terapia es un proceso, no una receta mágica. Pero tiene una estructura que te ayudará a saber qué esperar en cada momento.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pasos -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-12 lg:space-y-16">
+        {steps.map((step, index) => (
+          <div class="grid lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 items-start">
+            <!-- Número -->
+            <div class="flex items-center gap-4 lg:flex-col lg:items-center lg:gap-2">
+              <span class="text-5xl lg:text-6xl font-bold text-primary-200">{step.number}</span>
+              {index < steps.length - 1 && (
+                <div class="hidden lg:block w-px h-12 bg-primary-100"></div>
+              )}
+            </div>
+
+            <!-- Contenido -->
+            <div class="space-y-3 pt-1">
+              <h2 class="text-2xl lg:text-3xl font-bold text-ink">{step.title}</h2>
+              <p class="text-ink-light leading-relaxed text-lg">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Enfoque -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl lg:text-3xl font-bold text-ink mb-8 text-center">Mi enfoque terapéutico</h2>
+      <div class="space-y-4 text-ink-light leading-relaxed text-lg">
+        <p>
+          Trabajo desde un enfoque <strong class="text-ink">integrador</strong>, lo que significa que combino herramientas de diferentes corrientes psicológicas según lo que cada persona necesita.
+        </p>
+        <p>
+          Algunas personas se benefician más de trabajar sus pensamientos (enfoque cognitivo-conductual),
+          otras necesitan explorar sus emociones (enfoque humanista) y otras necesitan entender sus relaciones
+          y contexto (enfoque sistémico). La clave está en adaptar el tratamiento a ti, no al revés.
+        </p>
+        <p>
+          Mi objetivo es que la terapia sea <strong class="text-ink">útil, práctica y respetuosa con tu ritmo</strong>.
+          No se trata de rápido o lento, sino de hacerlo bien.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-600 to-primary-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        ¿Te gustaría saber más?
+      </h2>
+      <p class="text-lg text-primary-100 mb-8 max-width-xl mx-auto">
+        En la primera consulta podemos conocernos y decidir si el enfoque se adapta a lo que necesitas.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center gap-2 bg-white text-primary-700 px-8 py-4 rounded-[var(--radius-button)] text-base font-semibold hover:bg-primary-50 transition-colors shadow-sm"
+      >
+        Solicitar primera consulta
+      </a>
+    </div>
+  </section>
+</Layout>

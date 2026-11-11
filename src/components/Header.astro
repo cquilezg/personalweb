@@ -1,0 +1,98 @@
+---
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Sobre mí', href: '/sobre-mi' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Cómo trabajo', href: '/como-trabajo' },
+  { label: 'Preguntas frecuentes', href: '/preguntas-frecuentes' },
+  { label: 'Contacto', href: '/contacto' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sage-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-18">
+      <!-- Logo / Nombre -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-xl lg:text-2xl font-bold text-primary-700 group-hover:text-primary-600 transition-colors">
+          Psicología Online
+        </span>
+      </a>
+
+      <!-- Navegación escritorio -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+              currentPath === item.href
+                ? 'bg-primary-50 text-primary-700'
+                : 'text-ink-light hover:text-primary-700 hover:bg-primary-50/50',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a
+          href="/contacto"
+          class="hidden sm:inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-2.5 rounded-[var(--radius-button)] text-sm font-semibold hover:bg-primary-700 transition-colors shadow-sm"
+        >
+          Solicitar primera consulta
+        </a>
+
+        <!-- Botón móvil -->
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-ink-light hover:text-primary-700 hover:bg-primary-50 transition-colors"
+          aria-label="Abrir menú"
+        >
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-sage-100 bg-white">
+    <nav class="max-w-6xl mx-auto px-4 py-4 space-y-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'block px-4 py-3 rounded-lg text-sm font-medium transition-colors',
+            currentPath === item.href
+              ? 'bg-primary-50 text-primary-700'
+              : 'text-ink-light hover:text-primary-700 hover:bg-primary-50/50',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href="/contacto"
+        class="block w-full text-center bg-primary-600 text-white px-4 py-3 rounded-[var(--radius-button)] text-sm font-semibold hover:bg-primary-700 transition-colors mt-3"
+      >
+        Solicitar primera consulta
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
