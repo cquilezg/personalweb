@@ -1,0 +1,14 @@
+README.md
+  h_c4e495d424e97f 1-194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "148a247c56f99dbfde9606ad0066e7b9a69ed77b",
+  "prompts": {},
+  "humans": {
+    "h_c4e495d424e97f": {
+      "author": "Carmelo Quílez <carmeloquilez@gmail.com>"
+    }
+  }
+}
