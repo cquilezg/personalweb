@@ -3,52 +3,53 @@ import Layout from '../layouts/Layout.astro';
 
 const services = [
   {
-    title: 'Ansiedad y estrés',
-    description: 'La ansiedad puede manifestarse como preocupación constante, tensión física, dificultad para dormir o ataques de panic. Te ayudo a entender qué la genera y a desarrollar estrategias para gestionarla.',
-    details: ['Ansiedad generalizada', 'Ansiedad social', 'Ataques de pánico', 'Estrés crónico', 'Fobias'],
+    title: 'Psicología perinatal',
+    description: 'El embarazo, el parto y el posparto no siempre son como nos contaron. Miedos, cambios de identidad, lactancia, agotamiento, culpa... Te acompaño para que puedas vivir esta etapa con más calma y menos exigencias.',
+    details: ['Embarazo y miedo al parto', 'Ansiedad y depresión posparto', 'Lactancia y crianza', 'Cambios de identidad', 'Duelo perinatal'],
   },
   {
-    title: 'Autoestima',
-    description: 'Una baja autoestima afecta cómo te ves, cómo te relacionas y cómo tomas decisiones. Trabajamos juntos para que te conozcas mejor, te aceptes y construyas una imagen más realista y positiva de ti mismo/a.',
-    details: ['Autocrítica excesiva', 'Comparación constante', 'Dificultad para decir no', 'Perfeccionismo', 'Inseguridad'],
-  },
-  {
-    title: 'Dificultades emocionales',
-    description: 'A veces las emociones se sienten abrumadoras o confusas. Te ayudo a identificar lo que sientes, a entender por qué y a encontrar formas más sanas de expresar y regular tus emociones.',
-    details: ['Ira o frustración', 'Tristeza persistente', 'Dificultad para relacionarse', 'Cambios de humor', 'Sensación de vacío'],
-  },
-  {
-    title: 'Problemas de conducta en niños',
-    description: 'Los niños no siempre pueden expresar con palabras lo que les pasa. Los problemas de conducta suelen ser una señal de algo más profundo. Trabajo con el niño y la familia para entender y mejorar la situación.',
-    details: ['Berrinches frecuentes', 'Dificultad en el colegio', 'Aislamiento social', 'Problemas de sueño', 'Enuresis'],
+    title: 'Psicología infantil',
+    description: 'Los niños no siempre pueden explicar con palabras lo que les pasa. A veces lo muestran con conductas que desbordan a la familia. Trabajo con el niño y con vosotros para entender qué hay detrás y qué necesita.',
+    details: ['Problemas de conducta', 'Sueño y alimentación', 'Control de esfínteres', 'Adaptación escolar', 'Miedos y timidez'],
   },
   {
     title: 'Adolescencia',
-    description: 'La adolescencia es una etapa de cambios intensos. La presión del grupo, la identidad, las redes sociales y las expectativas pueden generar mucho malestar. Ofrezco un espacio seguro para explorar y crecer.',
-    details: ['Identidad personal', 'Presión social', 'Problemas escolares', 'Relación con la familia', 'Uso de tecnología'],
+    description: 'La adolescencia es intensa, para ellos y para ti. Identidad, presión del grupo, redes sociales, cambios de humor... Ofrezco un espacio donde puedan hablar sin sentirse juzgados.',
+    details: ['Identidad y autoestima', 'Presión social', 'Uso de redes y tecnología', 'Conflictos familiares', 'Ansiedad y estrés'],
   },
   {
-    title: 'Duelo y pérdidas',
-    description: 'Perder a alguien importante o atravesar una pérdida significativa es uno de los experiencia más dolorosas. No hay que pasar por ello solo/a. Te acompaño en el proceso de duelo con paciencia y respeto.',
-    details: ['Duelo por fallecimiento', 'Separación o divorcio', 'Pérdida de empleo', 'Otras pérdidas significativas'],
+    title: 'Crianza y familia',
+    description: 'Criar no viene con manual. Si sientes que los límites no funcionan, que pierdes la paciencia o que cada día es una negociación, podemos revisar juntos qué está pasando.',
+    details: ['Pautas y límites', 'Gestión de conflictos', 'Celos y rivalidad', 'Separación y cambios familiares', 'Crianza respetuosa'],
+  },
+  {
+    title: 'Duelo y pérdida perinatal',
+    description: 'La pérdida de un embarazo o de un bebé es un duelo que muchas veces se vive en silencio. Te acompaño a darle lugar, sin prisas y sin tener que explicar nada que no quieras.',
+    details: ['Pérdida gestacional', 'Duelo perinatal', 'Pérdidas posteriores', 'Acompañamiento a la pareja'],
+  },
+  {
+    title: 'Ansiedad y estrés',
+    description: 'Cuando la cabeza no para, el cuerpo se tensa y todo se vuelve cuesta arriba. Te ayudo a entender qué te pasa y a recuperar un poco de calma.',
+    details: ['Ansiedad y preocupación constante', 'Autoexigencia', 'Estrés y agotamiento', 'Regulación emocional'],
   },
 ];
 ---
 
-<Layout title="Servicios">
+<Layout title="Mis servicios">
   <!-- Hero -->
   <section class="bg-gradient-to-br from-primary-50 via-white to-sage-50 py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold text-ink mb-6">
-        Servicios
+        Mis servicios
       </h1>
       <p class="text-lg lg:text-xl text-ink-light max-w-2xl mx-auto">
-        Cada persona es única. Por eso, el tratamiento se adapta a tus necesidades, a tu ritmo y a tus objetivos.
+        No trabajo con etiquetas, sino con personas. Estas son las áreas en las que puedo
+        acompañarte; si no ves la tuya, escríbeme y lo hablamos.
       </p>
     </div>
   </section>
 
-  <!-- Servicios -->
+  <!-- Áreas de acompañamiento -->
   <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
       {services.map((service, index) => (
@@ -90,10 +91,10 @@ const services = [
   <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-600 to-primary-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-        ¿Te identificas con alguno de estos problemas?
+        ¿Te suena alguna de estas situaciones?
       </h2>
       <p class="text-lg text-primary-100 mb-8 max-w-xl mx-auto">
-        No tienes que seguir solo/a. Escríbeme y-book en la primera consulta lo que te preocupa.
+        No tienes que seguir solo/a. Escríbeme y cuéntame qué te pasa; vemos juntos cómo puedo ayudarte.
       </p>
       <a
         href="/contacto"
