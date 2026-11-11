@@ -11,11 +11,11 @@ interface Props {
 
 const {
   title,
-  description = 'Psicología online para niños, adolescentes y adultos en Alcalá de Henares. Acompañamiento profesional para ansiedad, autoestima, dificultades emocionales y más.',
+  description = 'Natalia Alcaraz, psicóloga perinatal e infantil en Alcalá de Henares. Acompañamiento en embarazo, posparto, infancia y adolescencia. Sesiones online.',
   canonicalURL,
 } = Astro.props;
 
-const siteTitle = `${title} | Psicología Online`;
+const siteTitle = `${title} | Natalia Alcaraz`;
 ---
 
 <!doctype html>
@@ -24,6 +24,7 @@ const siteTitle = `${title} | Psicología Online`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="author" content="Natalia Alcaraz Calleros" />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
     <!-- Open Graph -->

@@ -2,7 +2,7 @@
 const navItems = [
   { label: 'Inicio', href: '/' },
   { label: 'Sobre mí', href: '/sobre-mi' },
-  { label: 'Servicios', href: '/servicios' },
+  { label: 'Mis servicios', href: '/servicios' },
   { label: 'Cómo trabajo', href: '/como-trabajo' },
   { label: 'Preguntas frecuentes', href: '/preguntas-frecuentes' },
   { label: 'Contacto', href: '/contacto' },
@@ -15,9 +15,12 @@ const currentPath = Astro.url.pathname;
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-18">
       <!-- Logo / Nombre -->
-      <a href="/" class="flex items-center gap-2 group">
-        <span class="text-xl lg:text-2xl font-bold text-primary-700 group-hover:text-primary-600 transition-colors">
-          Psicología Online
+      <a href="/" class="flex flex-col leading-tight group">
+        <span class="text-lg lg:text-xl font-bold text-primary-700 group-hover:text-primary-600 transition-colors">
+          Natalia Alcaraz
+        </span>
+        <span class="text-[11px] lg:text-xs font-medium text-ink-light">
+          Psicóloga perinatal e infantil
         </span>
       </a>
 

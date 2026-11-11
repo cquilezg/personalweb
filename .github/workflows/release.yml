@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release-please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Resolve release tag
+        id: tag
+        run: |
+          TAG=$(git tag --points-at "$GITHUB_SHA" | grep -E '^v[0-9]' | sort -V | tail -n1)
+          if [ -z "$TAG" ]; then
+            echo "No release tag points at $GITHUB_SHA; nothing to publish."
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Publishing artifacts for $TAG"
+
+      - name: Setup Node
+        if: steps.tag.outputs.tag != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.tag.outputs.tag != ''
+        run: npm ci
+
+      - name: Build
+        if: steps.tag.outputs.tag != ''
+        run: npm run build
+
+      - name: Package dist
+        if: steps.tag.outputs.tag != ''
+        env:
+          TAG_NAME: ${{ steps.tag.outputs.tag }}
+        run: |
+          (cd dist && zip -qr "../dist-${TAG_NAME}.zip" .)
+          sha256sum "dist-${TAG_NAME}.zip" > "dist-${TAG_NAME}.zip.sha256"
+          cat "dist-${TAG_NAME}.zip.sha256"
+
+      - name: Upload release assets
+        if: steps.tag.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ steps.tag.outputs.tag }}
+        run: |
+          gh release upload "$TAG_NAME" \
+            "dist-${TAG_NAME}.zip" \
+            "dist-${TAG_NAME}.zip.sha256" \
+            --clobber
