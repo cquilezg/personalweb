@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+  version-guard:
+    name: Version guard
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject version changes in PRs to develop
+        if: github.base_ref == 'develop'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git fetch origin "$BASE_REF" --depth=1
+          BASE_VERSION=$(git show "origin/${BASE_REF}:package.json" | jq -r .version)
+          HEAD_VERSION=$(jq -r .version package.json)
+          echo "Base: ${BASE_VERSION} / Head: ${HEAD_VERSION}"
+          if [ "$BASE_VERSION" != "$HEAD_VERSION" ]; then
+            echo "::error::No cambies la versión en PRs a develop. La versión se gestiona con release-please en main."
+            exit 1
+          fi
