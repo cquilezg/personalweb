@@ -12,7 +12,7 @@ const services = [
   {
     title: 'Crianza y familia',
     description: 'Pautas y límites, gestión de conflictos y acompañamiento a madres y padres que quieren criar con más calma.',
-    icon: 'sparkles',
+    icon: 'baby',
   },
   {
     title: 'Duelo y pérdida perinatal',
@@ -29,7 +29,7 @@ const services = [
 
 <Layout title="Psicóloga perinatal en Alcalá de Henares">
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-sage-50">
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Texto -->
@@ -92,16 +92,23 @@ const services = [
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
         {services.map((service) => (
           <a
             href="/servicios"
-            class="group block p-6 rounded-2xl bg-surface border border-sage-100 hover:border-primary-200 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
+            class="group block p-6 rounded-2xl bg-surface border border-accent-100 hover:border-primary-200 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
           >
             <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
               {service.icon === 'brain' && (
                 <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18V5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.996 5.125a4 4 0 012.526 5.77" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18a4 4 0 002-7.465" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18a4 4 0 01-2-7.465" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.004 5.125a4 4 0 00-2.526 5.77" />
                 </svg>
               )}
               {service.icon === 'heart' && (
@@ -109,19 +116,23 @@ const services = [
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
               )}
-              {service.icon === 'sparkles' && (
+              {service.icon === 'baby' && (
                 <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12h.01" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h.01" />
                 </svg>
               )}
               {service.icon === 'leaf' && (
                 <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
                 </svg>
               )}
             </div>
             <h3 class="text-lg font-semibold text-ink mb-2">{service.title}</h3>
-            <p class="text-ink-light text-sm leading-relaxed">{service.description}</p>
+            <p class="text-ink-light text-base leading-relaxed">{service.description}</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 group-hover:text-primary-700">
               Saber más
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -135,7 +146,7 @@ const services = [
   </section>
 
   <!-- CTA final -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-600 to-primary-800">
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-700 to-primary-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
         ¿Empezamos por lo que te preocupa?
