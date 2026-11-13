@@ -1,0 +1,28 @@
+src/components/Header.astro
+  h_c4e495d424e97f 14,69
+src/pages/como-trabajo.astro
+  h_c4e495d424e97f 34,93
+src/pages/contacto.astro
+  h_c4e495d424e97f 7,35,49,62,74,90,165
+src/pages/index.astro
+  h_c4e495d424e97f 15,32,95,99,104-111,119,121-124,129-130,135,149
+src/pages/preguntas-frecuentes.astro
+  h_c4e495d424e97f 50,66,89
+src/pages/servicios.astro
+  h_c4e495d424e97f 30,64,81
+src/pages/sobre-mi.astro
+  h_c4e495d424e97f 9,126
+src/styles/global.css
+  h_c4e495d424e97f 4-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "474843d3de6d38d6968cea2bb19f67c8eed48877",
+  "prompts": {},
+  "humans": {
+    "h_c4e495d424e97f": {
+      "author": "Carmelo Quílez <carmeloquilez@gmail.com>"
+    }
+  }
+}
