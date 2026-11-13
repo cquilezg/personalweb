@@ -10,16 +10,6 @@ const services = [
     icon: 'heart',
   },
   {
-    title: 'Psicología infantil',
-    description: 'Niños y niñas de 0 a 12 años: problemas de conducta, sueño, alimentación, control de esfínteres o adaptación escolar.',
-    icon: 'child',
-  },
-  {
-    title: 'Adolescencia',
-    description: 'Identidad, presión social, redes y relación con la familia. Un espacio seguro para crecer sin sentirse juzgado.',
-    icon: 'users',
-  },
-  {
     title: 'Crianza y familia',
     description: 'Pautas y límites, gestión de conflictos y acompañamiento a madres y padres que quieren criar con más calma.',
     icon: 'sparkles',
@@ -31,13 +21,13 @@ const services = [
   },
   {
     title: 'Ansiedad y estrés',
-    description: 'Ansiedad, autoexigencia y dificultades para regular las emociones en adultos y jóvenes.',
+    description: 'Ansiedad, autoexigencia y dificultades para regular las emociones.',
     icon: 'brain',
   },
 ];
 ---
 
-<Layout title="Psicóloga perinatal e infantil en Alcalá de Henares">
+<Layout title="Psicóloga perinatal en Alcalá de Henares">
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-sage-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -45,15 +35,15 @@ const services = [
         <!-- Texto -->
         <div class="space-y-6 lg:space-y-8">
           <p class="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-primary-600">
-            Natalia Alcaraz · Psicóloga perinatal e infantil
+            Natalia Alcaraz · Psicóloga perinatal
           </p>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight">
             Acompaño a familias
-            <span class="text-primary-600">desde el embarazo hasta la adolescencia</span>
+            <span class="text-primary-600">en el embarazo, el posparto y la crianza</span>
           </h1>
           <p class="text-lg lg:text-xl text-ink-light leading-relaxed max-w-xl">
-            Un espacio seguro para madres, padres, bebés, niños y adolescentes.
-            Trabajo contigo y con tu familia, a tu ritmo y sin juicios.
+            Un espacio seguro para madres y padres que atraviesan el embarazo, el posparto
+            o la crianza. Trabajo contigo y con tu familia, a tu ritmo y sin juicios.
             Sesiones online.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -122,16 +112,6 @@ const services = [
               {service.icon === 'sparkles' && (
                 <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
-                </svg>
-              )}
-              {service.icon === 'child' && (
-                <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-                </svg>
-              )}
-              {service.icon === 'users' && (
-                <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                 </svg>
               )}
               {service.icon === 'leaf' && (
