@@ -1,0 +1,16 @@
+.github/workflows/ci.yml
+  h_c4e495d424e97f 47-49
+.github/workflows/release.yml
+  h_c4e495d424e97f 20-22,83-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "ab4a95e76119b0d491c4de1cdb6f2ddac7f0f3b2",
+  "prompts": {},
+  "humans": {
+    "h_c4e495d424e97f": {
+      "author": "Carmelo Quílez <carmeloquilez@gmail.com>"
+    }
+  }
+}
