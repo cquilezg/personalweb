@@ -17,6 +17,9 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - name: Run release-please
         id: release
@@ -77,3 +80,39 @@ jobs:
             "dist-${TAG_NAME}.zip" \
             "dist-${TAG_NAME}.zip.sha256" \
             --clobber
+
+  sync-develop:
+    name: Sync main into develop
+    needs: release
+    if: needs.release.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Open sync PR main -> develop
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.release.outputs.tag_name }}
+        run: |
+          BRANCH="sync/main-to-develop-${TAG}"
+
+          # Nothing to sync if develop already contains this main commit
+          if git merge-base --is-ancestor HEAD origin/develop; then
+            echo "develop already contains ${GITHUB_SHA}; nothing to sync."
+            exit 0
+          fi
+
+          # Idempotency: do not open a second PR for the same release
+          OPEN=$(gh pr list --head "$BRANCH" --base develop --state open --json number --jq 'length')
+          if [ "$OPEN" -gt 0 ]; then
+            echo "Sync PR for ${TAG} already open; skipping."
+            exit 0
+          fi
+
+          git push origin "HEAD:refs/heads/${BRANCH}"
+          gh pr create --base develop --head "$BRANCH" \
+            --title "chore: sync main into develop (${TAG})" \
+            --body "PR generada automáticamente tras el release ${TAG}. Mergear con merge commit (no squash) para mantener el historial común entre main y develop."

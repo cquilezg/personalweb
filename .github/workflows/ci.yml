@@ -44,7 +44,9 @@ jobs:
           fetch-depth: 0
 
       - name: Reject version changes in PRs to develop
-        if: github.base_ref == 'develop'
+        # The release sync PR (opened by the bot after a release) is the only
+        # legitimate way a version bump reaches develop.
+        if: github.base_ref == 'develop' && github.event.pull_request.user.login != 'github-actions[bot]'
         env:
           BASE_REF: ${{ github.base_ref }}
         run: |

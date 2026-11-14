@@ -6,5 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    define: {
+      'import.meta.env.HOME_VARIANT': JSON.stringify(process.env.HOME_VARIANT ?? 'nueva'),
+    },
   },
 });

@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
+    "dev:home-nueva": "node scripts/run-astro.mjs nueva dev 4321",
+    "dev:home-anterior": "node scripts/run-astro.mjs anterior dev 4322",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
