@@ -16,10 +16,16 @@ Requisitos: Node.js 22 y npm.
 
 ```bash
 npm ci
-npm run dev       # servidor local en http://localhost:4321
+npm run dev       # servidor local en http://localhost:4321 (home nueva)
+npm run dev:home-nueva    # home nueva en http://localhost:4321
+npm run dev:home-anterior # home anterior en http://localhost:4322
 npm run build     # genera dist/
 npm run preview   # sirve dist/ en local
 ```
+
+La ruta `/` muestra una de las dos versiones de la home, sin selector visible para los visitantes. `dev:home-nueva` y `dev:home-anterior` arrancan Astro con la variante elegida en puertos distintos para poder compararlas a la vez; `dev` usa la home nueva por defecto. Ambas versiones están en `src/components/HomeNueva.astro` y `src/components/HomeAnterior.astro`, y la selección se realiza en `src/pages/index.astro`.
+
+Para generar una build con la home anterior, ejecuta `HOME_VARIANT=anterior npm run build` en macOS/Linux o establece `HOME_VARIANT=anterior` en el entorno antes de ejecutar `npm run build`. La build normal usa la home nueva.
 
 Actualmente no hay suite de tests automatizada. El CI valida que el proyecto compila.
 
