@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/cquilezg/personalweb/compare/v0.1.0...v0.2.0) (2026-11-14)
+
+
+### Features
+
+* add new home variant and comparison workflow ([#10](https://github.com/cquilezg/personalweb/issues/10)) ([7f8a7e0](https://github.com/cquilezg/personalweb/commit/7f8a7e0e4a0d9ba68639d6d3702304fc46d1f401))
+* reposition as perinatal psychology and rebrand home ([fc68631](https://github.com/cquilezg/personalweb/commit/fc6863143112a2785ffde3216f6d1dded4af1812))
+
 ## 0.1.0 (2026-11-11)
 
 
