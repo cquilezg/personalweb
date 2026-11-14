@@ -1,0 +1,31 @@
+src/components/HomeAnterior.astro
+  s_97b7b1be9a69b1::t_46df17ea70654f 1-166
+src/components/HomeNueva.astro
+  s_97b7b1be9a69b1::t_9a61136793f629 1-164
+README.md
+  s_97b7b1be9a69b1::t_05da3029947bf7 19-21,26-29
+astro.config.mjs
+  s_97b7b1be9a69b1::t_453c9ee141a3e9 9-11
+package.json
+  s_97b7b1be9a69b1::t_715a4c25727853 7-8
+scripts/run-astro.mjs
+  s_97b7b1be9a69b1::t_4cd1eedd581292 1-31
+src/pages/index.astro
+  s_97b7b1be9a69b1::t_cb7f73a2b4f54b 2-3,5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "f4f222c2d92f5c630dbf1c57a14d94464c1aa616",
+  "prompts": {},
+  "sessions": {
+    "s_97b7b1be9a69b1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d963-a9f2-7130-9b2c-d42c7b7b70d2",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Carmelo Quílez <carmeloquilez@gmail.com>"
+    }
+  }
+}
